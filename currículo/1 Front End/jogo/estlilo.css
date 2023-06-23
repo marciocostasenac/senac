@@ -1,0 +1,60 @@
+.quadrado{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 150px;
+    border: 5px solid white;
+    border-radius: 20px;
+}
+.jogo{
+    background: cadetblue;
+    color:white;
+    border-radius: 20px;
+}
+    body{
+        background-color:bisque;
+        font-size: 20px;
+        font-family: fantasy;
+    }
+button{
+    background-color: aquamarine;
+    margin:10px;
+    border-radius: 20px;
+    font-size:15px ;
+}
+button:hover{
+background: red;
+}
+span{
+    color: brown;
+}
+#q1{
+    background-color: brown;
+    
+    
+}
+#q2{
+    background-color: blueviolet;
+
+}
+#q3{
+    background-color: blue;
+}
+#q4{
+    background-color: chartreuse;
+} 
+#q5{
+    background-color: black;
+}   
+#q6{
+    background-color: chocolate;
+}
+#q7{
+    background-color: cornflowerblue;
+}
+#q8{
+    background-color: crimson;
+}
+#q9{
+    background-color: darkgray;
+}

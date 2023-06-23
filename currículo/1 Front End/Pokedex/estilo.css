@@ -1,0 +1,59 @@
+.painel{
+    background-color: red;
+    height:600px;
+    border-radius: 10px;
+    padding-top: 10px;
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+.pokemon{
+    width: 100px;
+    height:100px;
+}
+
+#tela{
+    margin:auto;
+    border: 15px solid rgb(219,214,214);
+    width:300px;
+    height:280px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-image:url(https://i.pinimg.com/736x/d6/7c/3c/d67c3cbce4d7e9355e8522e10434d76c.jpg);
+    background-size: cover;
+    animation: carregar 10s alternate;
+    
+
+}
+@keyframes carregar{
+    0%{
+        height: 0;
+
+    }
+    100%{
+        transition:opacity 0.
+    }
+}
+button{
+    height: 35px;
+    margin: 7px;
+    background-color: black;
+    color: white;
+    border: 3px solid gray;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+
+}
+button:hover{
+    background-color: green;
+    height: 40px;
+}
+#entrada{
+    height:40px;
+    text-align:center;
+    border-radius: 10px;
+}
+body{
+    background-image: url(https://i.pinimg.com/736x/d6/7c/3c/d67c3cbce4d7e9355e8522e10434d76c.jpg);
+    background-size: cover;
+}

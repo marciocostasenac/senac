@@ -1,0 +1,89 @@
+body{
+     background-color: rgb(209, 120, 120);
+     background-image: url(https://img.freepik.com/fotos-gratis/composicao-de-efeitos-climaticos_23-2149853295.jpg?w=1380&t=st=1683741768~exp=1683742368~hmac=b517ea45ec305e269ed402218772b91e46b189b658ebb36b7703315b4b555ebb);
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     text-align: center;
+
+}
+  .painel{
+    background-color: rgba(15, 15, 14, 0.459);
+    width:500px;
+    height:500px;
+    margin:auto;
+    margin-top: 100px;
+    border-radius: 40px;
+    padding-left: 40px;
+    color: rgb(232, 237, 241);
+
+  }
+
+  .botão{
+    background-color: brown;
+    color: rgb(46, 9, 71);
+    border-radius: 10px;
+    height: 40px;
+  }
+
+    #botão:hover{
+        background-color: red;
+        transition: 2s;
+        
+    }
+    .imgTempo{
+        animation:voltar 4s alternate infinite;
+    }
+    @keyframes voltar{
+        0%{
+            transform:translateX(0px);
+        }
+        25%{
+            transform:translateX(100px);
+        }
+        50%{
+            transform:translateX(-100px);
+        } 
+        75%{
+          transform:translateX(200px);
+         }
+        100% {
+            transform:translateX(-200px);
+
+        }
+        
+    }
+    .botão{
+      background-color:brown;
+      height:42px;
+      color:white;
+      border-radius:10px;
+      border: none;
+      width: 50px;
+      animation: cor 10s alternate infinite;
+    }
+    @keyframes cor {
+      0%{
+        background-color:red;
+      }
+      25%{
+        background-color: yellow;
+      }
+
+      50%{
+          background-color:green; 
+        }
+        75%{
+          background-color:blue;
+
+        }
+        100% {
+          background-color:deeppink;
+        }
+      }
+    
+  
+  #cidade{
+    background-color: rgb(163, 20, 32);
+    height:40px ;
+    border-radius: 10px;
+    color: rgb(9, 3, 15);
+  }

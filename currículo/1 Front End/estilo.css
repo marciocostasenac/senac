@@ -1,0 +1,89 @@
+/*esta é a parte da foto*/
+.foto {
+border: 5px solid blue;
+border-radius:100%;
+}
+
+body {
+    /* Background-color:  red; */
+    background-image: linear-gradient(to left, rgba( 65,12,12,0.127), rgba(0,0,255,0.222));
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+.menu{
+    background-color: black;
+    border-radius: 15px;
+}
+
+.menu ul li {
+      display:inline;
+}
+.menu ul li a {
+     color: white;
+     padding: 20px;
+     display: inline-block;
+     text-decoration: none;
+}
+.menu ul li a:hover{
+    background-color: blue;
+    font-size: 20px;
+    border-radius: 20px;
+    transition-duration: 4s;
+}
+.tabela{
+    text-align: left;
+    background-color: rgb(21,60,125);
+    color : rgb(255, 255, 255);
+    font-family:fantasy;
+}
+.TABELA TR:HOVER{
+    font-size: 20px;
+    color: yellow;
+}
+/*esta é a parte da foto*/
+.foto{
+    border:5px solid blue;
+    border-radius: 100%;
+
+}
+body{
+    /*Background-color:red;*/
+    Background-image:linear-gradient(to left, rgba(65,12,12,0.127),rgba(0,0,255,0.222));
+    text-align:center;
+}
+ul{
+    list-style: none;
+}
+.menu{
+    background-color:black;
+    border-radius:15px;
+
+}
+.menu ul li a{
+    color:blueviolet;
+    padding: 20px;
+    display:inline-block;
+    text-decoration:none;
+
+}
+.menu ul li a:hover{
+    background-color:blue;
+    font-size:20px;
+    transition-duration:4s;
+}
+.tabela{
+    text-align:left;
+    background-color:rgb(21,60,125);
+    color : rgb(255, 255, 255);
+    font-family:fantasy;
+
+}
+.TABELA TR:HOVER{
+    font-size:20px;
+    color:brown
+}
+
+

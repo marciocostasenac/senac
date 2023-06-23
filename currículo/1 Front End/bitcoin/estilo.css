@@ -1,0 +1,37 @@
+body {
+    background-color:blueviolet;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.painel{
+    background-color: rgb(204, 28, 28); 
+    width: 500px;
+    height: 500px;
+    margin:auto;
+    border-radius: 20px;
+    text-align: center;
+    padding-left: 40px;
+    box-shadow: 0px 0px 20px black;
+}
+.botão{
+    background-color: brown;
+}
+#moeda {
+    background-color: chartreuse;
+    color:rgb(46, 133, 209);
+    border-radius: 10px;
+    height: 25px;
+
+}
+img{
+    animation: rotacionar 5s infinite alternate;
+
+}
+@keyframes rotacionar{
+    0%{
+        transform:rotate3d(0,1,0, 0deg);
+    }
+    100%{
+        transform:rotate3d(0,1,0, 360deg);
+    }
+}

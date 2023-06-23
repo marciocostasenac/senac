@@ -1,0 +1,31 @@
+body{
+    background-color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.painel{
+    background-color: beige;
+    width: 500px;
+    height:500px;
+    margin:auto;
+    border-radius: 20px;
+    padding-left: 40px;
+
+
+}
+.botao{
+    background-color: brown;
+    color: aliceblue;
+    border-radius: 10px;
+    height: 40px;
+
+
+}
+#cep{
+    height: 40px;
+    border-radius: 10px;
+
+    
+    
+}

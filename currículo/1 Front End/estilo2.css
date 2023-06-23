@@ -1,0 +1,24 @@
+.esporte{
+    border: 10px solid  green;
+    border-radius: 20px;
+    
+}
+.texto{
+    font-size:  50px;
+    color: blueviolet;
+
+}
+/* .tabela{
+    font-size: 50px;
+    color:brown;
+} */
+.tabela{
+    font-size: 50px;
+    text-align: left;
+    background-color: aquamarine;
+    color: black;
+    font-family: fantasy;
+}
+body{
+    background-color: beige;
+}
