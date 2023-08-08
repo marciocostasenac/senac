@@ -16,7 +16,7 @@ var bolaRadius = 10;
 
 var bolaX = canvas.width / 2;
 var bolaY = canvas.height - 30;
-var bolaDX = 4;                   //direção de bola em X (esquerda/direita)
+var bolaDX = 2;                   //direção de bola em X (esquerda/direita)
 var bolaDY = -2;                  //direção de bola em y  (acima / abaixo)
 
 var tijolosPorLinha = 3;
@@ -31,7 +31,75 @@ var tijolos = []; //lista com os tijolos
 var totalPontuacao = tijolosPorLinha * tijolosPorColuna * 10;
 var pontuacao= 0;
 
+function facil(){
+    raqueteLargura = 90;
+    tijolosPorLinha = 4;
+    tijolosPorColuna = 8;
+    tijoloLargura = 60;
+    tijoloAltura = 20;
+    bolaRadius = 5;  //tamanho da bola
+    bolaDX = 1;       //velocidade da bola direita/esquerda
+    bolaDY =  -2;     //velocidade da bola acima/abaixo
+    totalPontuacao = tijolosPorLinha * tijolosPorColuna * 10;
+    pontuacao = 0;
+    bolaX = canvas.width /2;
+    bolaY = canvas.height -30;
+    iniciarTijolos();
 
+
+} 
+function medio(){
+    raqueteLargura = 70;
+    tijolosPorLinha = 4;
+    tijolosPorColuna =9;
+    tijoloLargura = 50;
+    tijoloAltura = 15;
+    bolaRadius = 7;
+    bolaDX = 3;
+    bolaDY = -3;
+    totalPontuacao = tijolosPorLinha * tijolosPorColuna * 10;
+    pontuacao = 0;
+    bolaX = canvas.width /2;
+    bolaY = canvas.height -30;
+    iniciarTijolos();
+
+
+}
+function dificil(){
+    raqueteLargura = 70;
+    tijolosPorLinha = 6;
+    tijolosPorColuna = 11;
+    tijoloLargura = 40;
+    tijoloAltura = 30;
+    bolaRadius = 5;
+    bolaDX = 3;
+    bolaDY = -1;
+    totalPontuacao = tijolosPorLinha * tijolosPorColuna * 10;
+    pontuacao = 0;0
+    bolaX = canvas.width /2;
+    bolaY = canvas.height -30;
+    iniciarTijolos();
+
+
+}
+function impossivel(){
+    raqueteLargura = 90;
+    tijolosPorLinha = 8;
+    tijolosPorColuna =8;
+    tijoloLargura = 50;
+    tijoloAltura = 5;
+    bolaRadius = 8;
+    bolaDX = 1;
+    bolaDY = -1;
+    totalPontuacao = tijolosPorLinha * tijolosPorColuna * 10;
+    pontuacao = 0;
+    bolaX = canvas.width /2;
+    bolaY = canvas.height -30;
+    iniciarTijolos();
+
+
+}
+function iniciarTijolos(){
 //dedicado apena a inicialização dos tijolos
 for (var coluna = 0; coluna < tijolosPorColuna; coluna++) {
     tijolos[coluna] = []  //0 1 2 3 4 5
@@ -44,6 +112,10 @@ for (var coluna = 0; coluna < tijolosPorColuna; coluna++) {
         //ativo, determina se o tijolo aparece ou não, 1 ou 0
     }
 }
+}
+iniciarTijolos();
+
+
 
 
 
@@ -133,12 +205,14 @@ function detectarColisao() {
                     && bolaY - bolaRadius < tijolo.y + tijoloAltura){
                         bolaDY = -bolaDY;
                         tijolo.ativo = 0;
+
                         tela = document.getElementById("ponto");
                         pontuacao = pontuacao + 10;
-                        tela.innerHTML = pontuacao;
+                        tela.innerHTML = "score:"+pontuacao;
+                        gerarEfeitoSonoro('moeda.mp3');
 
                         if(pontuacao === totalPontuacao){
-                            window.location.reload();
+                            vitoria();
                         }
 
                  }
@@ -150,6 +224,9 @@ function detectarColisao() {
 function gameover(){
     var gameover = document.getElementById("gameover");
     gameover.style.display = "block";
+    bolaDX =0;
+    bolaDY =0;
+    gerarEfeitoSonoro("game over.mp3");
 }
 
 function reiniciar(){
@@ -157,6 +234,40 @@ function reiniciar(){
 
   
 }
+function vitoria(){
+    var mensagem = document.getElementById("vitoria");
+    mensagem.style.display = "block"; 
+    bolaDX =0;
+    bolaDY =0;
+    gerarEfeitoSonoro("vitoria.mp3");
+
+}
+
+function gerarEfeitoSonoro(som){
+    // cria contexto de audio
+    var contexto = new (window.AudioContext)();
+    //fazer uma requisição para carregar o arquivo de som
+    var requisicao = new XMLHttpRequest();
+    requisicao.open('GET',som,true);
+    requisicao.responseType = 'arraybuffer';//armazenar na memoria
+
+    requisicao.onload = function(){
+            //decodificar o arquivo de som
+            contexto.decodeAudioData(requisicao.response,function(buffer) { 
+            //reprodução do som no navegador
+            var fonte = contexto.createBufferSource();
+            fonte.buffer = buffer;
+            //conectar a saída de som
+            fonte.connect(contexto.destination);
+            fonte.start(0);     //executa som
+        });
+    
+}
+requisicao.send();
+ }
+
+ 
+
 
 
 function desenhar() {
@@ -170,16 +281,19 @@ function desenhar() {
     //analisar colisao eixo X, colisao canto direita/esquerdo
     if (bolaX + bolaDX > canvas.width - bolaRadius || bolaX + bolaDX < bolaRadius) {
         bolaDX = - bolaDX; //inverte direcao direita/esquerda
+        gerarEfeitoSonoro('bordas.mp3');
     }
     //analisa colisao com parte de cima
     if (bolaY + bolaDY < bolaRadius) {
         bolaDY = -bolaDY; //inverte colisao ao bater em cima
+        gerarEfeitoSonoro('bordas.mp3');
 
     } else if (bolaY + bolaDY > canvas.height - raqueteAltura) {
 
         //se for maior que o começo da raquete e menor que o final da raquete
         if (bolaX > raqueteX && bolaX < raqueteX + raqueteLargura) {
             bolaDY = -bolaDY;           //inverte direção
+            gerarEfeitoSonoro('raquete.mp3');
         } else {
             // document.location.reload(); //reinicia
             gameover();
